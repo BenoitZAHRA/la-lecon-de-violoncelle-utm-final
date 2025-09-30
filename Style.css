@@ -1,56 +1,79 @@
-/* Image de fond Canva */
+/* fallback couleur si l'image ne se charge pas */
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background: url("Pageutm.png") no-repeat center center fixed;
-  background-size: cover;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #0b0b0b; /* couleur de base pour lisibilité */
+  transition: background-image 0.4s ease-in-out, opacity 0.4s;
 }
 
-/* Conteneur global */
+/* Lorsque l'image est prête, la classe bg-loaded (ajoutée par JS) applique l'image */
+body.bg-loaded {
+  background-image: url("Pageutm.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; /* optionnel : retire si mobile bug */
+}
+
+/* Loader simple centré */
+.loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  z-index: 50;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Conteneur principal */
 .background {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
+  position: relative;
+  z-index: 10; /* permet que les boutons restent au-dessus du loader si besoin */
 }
 
-/* Conteneur des boutons */
+/* Boutons */
 .button-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
+  backdrop-filter: blur(0.3px); /* léger flou si supporté */
 }
 
-/* Style des boutons */
 .btn {
   text-decoration: none;
-  padding: 15px 30px;
+  padding: 14px 26px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   color: #fff;
-  background: rgba(0, 0, 0, 0.6); /* fond semi-transparent */
+  background: rgba(0,0,0,0.55);
   border-radius: 12px;
-  text-align: center;
-  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform 0.18s ease, background 0.18s ease;
 }
 
-/* Effet au survol */
-.btn:hover {
-  transform: scale(1.05);
-  background: rgba(0, 0, 0, 0.8);
+.btn:hover,
+.btn:focus {
+  transform: translateY(-3px);
+  background: rgba(0,0,0,0.75);
+  outline: none;
 }
 
 /* Responsive mobile */
 @media (max-width: 600px) {
   .btn {
     font-size: 16px;
-    padding: 12px 20px;
+    padding: 12px 18px;
   }
-
-  .button-container {
-    gap: 15px;
-  }
+  .button-container { gap: 12px; }
 }
