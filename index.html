@@ -19,29 +19,52 @@
     fbq('init', '1130763355266390');
     fbq('track', 'PageView');
   </script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      margin: 0;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+    .section {
+      margin: 2em 0;
+    }
+    a {
+      display: inline-block;
+      margin: 1em 0;
+      font-size: 1.1em;
+      text-decoration: none;
+      color: #0055aa;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 2em;">
-  <h1>🎻 La leçon de violoncelle</h1>
-  <p>Un spectacle musical tout public</p>
+<body>
 
-  <img src="Réserver ICI.png" alt="Affiche du concert" style="max-width: 100%; height: auto;">
+  <header class="section">
+    <h1>🎻 La leçon de violoncelle</h1>
+    <p>Un spectacle musical tout public</p>
+  </header>
 
-  <!-- 🎥 Vidéo intégrée -->
-  <section id="video-promo" style="text-align:center; margin: 2em 0;">
-    <video controls width="100%" style="max-width:800px;">
-      <source src="La Leçon de Violoncelle - TEASER - Les Arts Phocéens" type="video/mp4">
+  <section class="section">
+    <img src="assets/Réserver-ICI.png" alt="Affiche du concert">
+  </section>
+
+  <section class="section">
+    <video controls width="100%" style="max-width:800px;" poster="assets/Réserver-ICI.png">
+      <source src="assets/video-concert.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la lecture vidéo.
     </video>
   </section>
 
-  <p>
-    <a href="https://youtu.be/1NOlKtem3hk" target="_blank">🎥 Voir le teaser</a>
-  </p>
+  <section class="section">
+    <a href="https://youtu.be/1NOlKtem3hk" target="_blank">🎥 Voir le teaser</a><br>
+    <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704" target="_blank">🎟 Réserver sur BilletRéduc</a>
+  </section>
 
-  <p>
-    <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704" target="_blank">
-      🎟 Réserver sur BilletRéduc
-    </a>
-  </p>
 </body>
 </html>
