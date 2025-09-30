@@ -3,58 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Page UTM</title>
+  <title>Page Concert</title>
   <style>
-    body{margin:0;font-family:Arial, sans-serif;color:#111;text-align:center}
-    img.full{width:100%;height:auto;display:block}
-    .bottom{padding:16px}
-    h2{font-size:16px;margin:0 0 12px 0}
-    label,small{font-size:14px;color:#333;margin:8px 0;display:block;text-align:left}
-    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.1);margin:12px 0;text-align:left}
-    .grid{display:grid;gap:8px}
-    .value{padding:8px;background:#f5f5f5;border-radius:6px;font-size:13px}
-    button{width:100%;padding:10px;margin:6px 0;border-radius:6px;font-size:14px;border:0;background:#0b73ff;color:#fff;cursor:pointer}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #111;
+      text-align: center;
+      background: #f5f5f5;
+    }
+    img.full {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .bottom {
+      padding: 16px;
+    }
+    .card {
+      background: #fff;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      margin: 12px auto;
+      max-width: 400px;
+    }
+    button, a.btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      border: 0;
+      background: #0b73ff;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover, a.btn:hover {
+      background: #095ed1;
+    }
   </style>
 
   <!-- Pixel Facebook -->
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','1130763355266390');fbq('track','PageView');
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1130763355266390');
+    fbq('track','PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1130763355266390&ev=PageView&noscript=1"/></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1130763355266390&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 <body>
   <!-- Image principale -->
-  <img src="Pageutm.png" alt="Page UTM" class="full">
+  <img src="Pageutm.png" alt="Affiche du concert" class="full">
 
-  <!-- Contenu en bas -->
+  <!-- Contenu -->
   <div class="bottom">
     <div class="card">
-      <h2>UTM détectés</h2>
-      <div class="grid">
-        <div><label>utm_source</label><div id="utm_source" class="value">—</div></div>
-        <div><label>utm_medium</label><div id="utm_medium" class="value">—</div></div>
-        <div><label>utm_campaign</label><div id="utm_campaign" class="value">—</div></div>
-        <div><label>utm_term</label><div id="utm_term" class="value">—</div></div>
-        <div><label>utm_content</label><div id="utm_content" class="value">—</div></div>
-        <div><label>Referrer</label><div id="referrer" class="value">—</div></div>
-      </div>
-      <button id="clear-utms">Effacer UTM stockés</button>
-      <small>Les UTM sont sauvegardés 30 jours.</small>
-    </div>
-  </div>
-
-  <script>
-    const KEYS=['utm_source','utm_medium','utm_campaign','utm_term','utm_content'],NAME='saved_utms_v1';
-    const parse=q=>{const p={};q.replace(/^\?/,'').split('&').forEach(x=>{if(!x)return;let[k,v='']=x.split('=');p[decodeURIComponent(k)]=decodeURIComponent(v.replace(/\+/g,' '))});return p};
-    const setC=(n,v,d)=>{let date=new Date();date.setTime(date.getTime()+d*864e5);document.cookie=n+'='+encodeURIComponent(v)+';expires='+date.toUTCString()+';path=/'};
-    const getC=n=>(document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)')||[]).pop();
-    const save=u=>{let m=Object.assign({},load(),u);localStorage.setItem(NAME,JSON.stringify(m));setC(NAME,JSON.stringify(m),30)};
-    const load=()=>{try{return JSON.parse(localStorage.getItem(NAME)||getC(NAME)||'{}')}catch(e){return{}}};
-    const fill=u=>{KEYS.forEach(k=>{document.getElementById(k).textContent=u[k]||'—'});document.getElementById('referrer').textContent=document.referrer||'—'};
-    const attach=u=>{document.querySelectorAll('a[data-add-utm]').forEach(a=>{let url=new URL(a.href);Object.keys(u).forEach(k=>u[k]&&url.searchParams.set(k,u[k]));a.href=url})};
-    const clear=()=>{localStorage.removeItem(NAME);setC(NAME,'',-1);location.reload()};
-    (()=>{let u=parse(location.search),s=load(),f=Object.assign({},s,u);if(Object.keys(u).length)save(u);fill(f);attach(f);document.getElementById('clear-utms').onclick=e=>{e.preventDefault();clear()}})();
-  </script>
-</body>
-</html>
+      <a href="https://youtu.be/1NOlKtem3hk" target="_blank" class="btn">🎬 Voir le teaser</a>
+      <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704" target="_blank" class="btn">🎟_
