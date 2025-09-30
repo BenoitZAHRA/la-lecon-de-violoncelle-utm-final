@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.visuel {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+.logo {
+  height: 40px;
+  vertical-align: middle;
+}
