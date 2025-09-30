@@ -23,56 +23,58 @@
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
-      padding: 2em;
       margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
     }
-    img, video {
-      max-width: 100%;
-      height: auto;
-    }
-    .section {
-      margin: 2em 0;
-    }
-    a {
-      display: inline-block;
-      margin: 1em 0;
-      font-size: 1.1em;
-      text-decoration: none;
-      color: #0055aa;
-    }
-    .video-wrapper {
+
+    .hero {
+      position: relative;
       background-image: url('assets/Réserver-ICI.png');
       background-size: cover;
       background-position: center;
-      padding: 2em;
-      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .video-wrapper video {
+
+    .hero video {
       max-width: 600px;
+      width: 90%;
       border: 2px solid white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .section {
+      text-align: center;
+      padding: 2em;
+    }
+
+    a {
+      display: inline-block;
+      margin: 1em;
+      font-size: 1.1em;
+      text-decoration: none;
+      color: #0055aa;
     }
   </style>
 </head>
 <body>
 
-  <header class="section">
-    <h1>🎻 La leçon de violoncelle</h1>
-    <p>Un spectacle musical tout public</p>
-  </header>
-
-  <section class="section video-wrapper">
+  <div class="hero">
     <video controls>
       <source src="assets/video-concert.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la lecture vidéo.
     </video>
-  </section>
+  </div>
 
-  <section class="section">
-    <a href="https://youtu.be/1NOlKtem3hk" target="_blank">🎥 Voir le teaser</a><br>
+  <div class="section">
+    <h1>🎻 La leçon de violoncelle</h1>
+    <p>Un spectacle musical tout public</p>
+    <a href="https://youtu.be/1NOlKtem3hk" target="_blank">🎥 Voir le teaser</a>
     <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704" target="_blank">🎟 Réserver sur BilletRéduc</a>
-  </section>
+  </div>
 
 </body>
 </html>
