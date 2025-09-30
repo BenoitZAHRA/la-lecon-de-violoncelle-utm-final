@@ -4,29 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Leçon de Violoncelle – Page UTM</title>
+  <meta name="description" content="Découvrez La Leçon de Violoncelle, un concert exceptionnel. Regardez le teaser et réservez vos places sur BilletReduc." />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Pixel Facebook -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
-    n.queue=[];t=b.createElement(e);t.async=!0; 
-    t.src=v;s=b.getElementsByTagName(e)[0]; 
-    s.parentNode.insertBefore(t,s)}(window, document,'script', 
-    'https://connect.facebook.net/en_US/fbevents.js'); 
-    fbq('init', '1130763355266390'); 
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1130763355266390');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=1130763355266390&ev=PageView&noscript=1"/>
   </noscript>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .visuel {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background-color: #e0e0e0;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d0d0d0;
+    }
+
+    .logo {
+      height: 24px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <img src="assets/Pageutm.png" alt="Affiche du concert" class="visuel" />
+    <img src="assets/Pageutm.png" alt="Affiche du concert La Leçon de Violoncelle avec date et lieu" class="visuel" />
 
     <div class="buttons">
       <a href="https://youtu.be/1NOlKtem3hk?si=rXYIhY61zFLMFaTR&utm_source=facebook&utm_medium=cpc&utm_campaign=concert_automne"
@@ -38,6 +88,7 @@
       <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704?utm_source=facebook&utm_medium=cpc&utm_campaign=concert_automne"
          class="btn billetreduc" target="_blank">
          <img src="assets/logobilletreduc.png" alt="BilletReduc" class="logo" />
+         🎟️ Réserver sur BilletReduc
       </a>
     </div>
   </div>
