@@ -18,25 +18,30 @@ body {
 }
 
 .buttons {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center; /* Centrage vertical */
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem; /* Boutons plus grands */
+  font-size: 1.2rem;       /* Texte plus grand */
   background-color: #0077cc;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;      /* Coins arrondis */
   font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Relief */
+  transition: transform 0.2s ease;
 }
 
 .btn:hover {
   background-color: #005fa3;
+  transform: scale(1.05); /* Effet au survol */
 }
 
 .logo {
