@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Leçon de Violoncelle – Page UTM</title>
   <meta name="description" content="Découvrez La Leçon de Violoncelle, un concert exceptionnel." />
-  <link rel="stylesheet" href="style.css" />
 
   <!-- Pixel Facebook -->
   <script>
@@ -35,6 +34,9 @@
 
     .container {
       padding: 20px;
+      position: relative;
+      max-width: 600px;
+      margin: auto;
     }
 
     .visuel {
@@ -42,11 +44,39 @@
       height: auto;
       border-radius: 8px;
     }
+
+    .zone-lien {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    /* Exemple de positionnement à ajuster selon ton Canva */
+    .youtube-lien {
+      top: 65%;
+      left: 20%;
+      width: 60%;
+      height: 8%;
+    }
+
+    .billetreduc-lien {
+      top: 75%;
+      left: 20%;
+      width: 60%;
+      height: 8%;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="assets/Pageutm.png" alt="Affiche du concert La Leçon de Violoncelle avec date et lieu" class="visuel" />
+
+    <a href="https://youtu.be/1NOlKtem3hk?utm_source=facebook&utm_medium=cpc&utm_campaign=concert_automne"
+       class="zone-lien youtube-lien" target="_blank"></a>
+
+    <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704?utm_source=facebook&utm_medium=cpc&utm_campaign=concert_automne"
+       class="zone-lien billetreduc-lien" target="_blank"></a>
   </div>
 </body>
 </html>
