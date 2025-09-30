@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page UTM Concert</title>
+
+  <!-- Preload pour aider le navigateur -->
+  <link rel="preload" href="Pageutm.png" as="image">
+
   <link rel="stylesheet" href="style.css" />
 
   <!-- Meta Pixel Code -->
@@ -26,13 +30,45 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
+  <!-- Loader visible tant que l'image de fond n'est pas prête -->
+  <div id="loading" class="loading">Chargement…</div>
+
   <div class="background">
-    <div class="button-container">
-      <a href="https://youtu.be/1NOlKtem3hk?utm_source=github&utm_medium=landing&utm_campaign=concert" 
-         target="_blank" class="btn">🎬 Voir le teaser</a>
-      <a href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704?utm_source=github&utm_medium=landing&utm_campaign=concert" 
-         target="_blank" class="btn">🎟 Réserver sur BilletReduc</a>
+    <div class="button-container" role="navigation" aria-label="Actions">
+      <a href="https://youtu.be/1NOlKtem3hk?utm_source=github&utm_medium=landing&utm_campaign=concert&utm_content=teaser"
+         target="_blank" rel="noopener noreferrer" class="btn">🎬 Voir le teaser</a>
+
+      <a id="reserve-btn"
+         href="https://www.billetreduc.com/spectacle/la-lecon-de-violoncelle-387704?utm_source=github&utm_medium=landing&utm_campaign=concert&utm_content=reservation"
+         target="_blank" rel="noopener noreferrer" class="btn"
+         onclick="fbq('track', 'Lead');">🎟 Réserver sur BilletReduc</a>
     </div>
   </div>
+
+  <!-- Script : précharge et applique le background une fois prêt -->
+  <script>
+    (function() {
+      var imgPath = 'Pageutm.png'; // <-- modifier si Image dans images/Pageutm.png
+      var img = new Image();
+
+      img.onload = function() {
+        // ajoute une classe qui applique le background via CSS
+        document.body.classList.add('bg-loaded');
+
+        // retire le loader
+        var loader = document.getElementById('loading');
+        if (loader) loader.style.display = 'none';
+      };
+
+      img.onerror = function() {
+        console.warn('Échec chargement image :', imgPath);
+        var loader = document.getElementById('loading');
+        if (loader) loader.textContent = 'Image de fond introuvable';
+      };
+
+      // lance le chargement
+      img.src = imgPath;
+    })();
+  </script>
 </body>
 </html>
