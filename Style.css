@@ -1,26 +1,27 @@
-/* Applique l'image de fond à tout le body */
+/* Image de fond Canva */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   background: url("Pageutm.png") no-repeat center center fixed;
-  background-size: cover; /* L'image couvre tout l'écran */
+  background-size: cover;
   font-family: Arial, sans-serif;
 }
 
-/* Centrer le contenu (les boutons) */
+/* Conteneur global */
 .background {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  text-align: center;
 }
 
 /* Conteneur des boutons */
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* espace entre les boutons */
+  gap: 20px;
 }
 
 /* Style des boutons */
@@ -29,15 +30,27 @@ body {
   padding: 15px 30px;
   font-size: 18px;
   font-weight: bold;
-  color: white;
-  background: rgba(0, 0, 0, 0.6); /* fond semi-transparent pour lisibilité */
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6); /* fond semi-transparent */
   border-radius: 12px;
   text-align: center;
   transition: transform 0.2s, background 0.2s;
 }
 
-/* Effet hover */
+/* Effet au survol */
 .btn:hover {
   transform: scale(1.05);
   background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .button-container {
+    gap: 15px;
+  }
 }
