@@ -1,1 +1,43 @@
+/* Applique l'image de fond à tout le body */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url("Pageutm.png") no-repeat center center fixed;
+  background-size: cover; /* L'image couvre tout l'écran */
+  font-family: Arial, sans-serif;
+}
 
+/* Centrer le contenu (les boutons) */
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Conteneur des boutons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espace entre les boutons */
+}
+
+/* Style des boutons */
+.btn {
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.6); /* fond semi-transparent pour lisibilité */
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+/* Effet hover */
+.btn:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.8);
+}
