@@ -41,6 +41,18 @@
       text-decoration: none;
       color: #0055aa;
     }
+    .video-wrapper {
+      background-image: url('assets/Réserver-ICI.png');
+      background-size: cover;
+      background-position: center;
+      padding: 2em;
+      text-align: center;
+    }
+    .video-wrapper video {
+      max-width: 600px;
+      border: 2px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
   </style>
 </head>
 <body>
@@ -50,12 +62,8 @@
     <p>Un spectacle musical tout public</p>
   </header>
 
-  <section class="section">
-    <img src="assets/Réserver-ICI.png" alt="Affiche du concert">
-  </section>
-
-  <section class="section">
-    <video controls width="100%" style="max-width:800px;" poster="assets/Réserver-ICI.png">
+  <section class="section video-wrapper">
+    <video controls>
       <source src="assets/video-concert.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la lecture vidéo.
     </video>
