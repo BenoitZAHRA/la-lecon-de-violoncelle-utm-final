@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>La leçon de violoncelle</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concert – Page UTM</title>
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Pixel Facebook -->
   <script>
@@ -14,36 +16,17 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'TON_ID_PIXEL'); 
+    fbq('init', 'VOTRE_PIXEL_ID'); // ← Remplace par ton ID pixel
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=TON_ID_PIXEL&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=VOTRE_PIXEL_ID&ev=PageView&noscript=1"/>
   </noscript>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      text-align: center;
-      padding: 50px;
-    }
-    img.affiche {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-  </style>
 </head>
 <body>
-
-  <h1>🎻 La leçon de violoncelle</h1>
-
-  <!-- Visuel Canva en PNG hébergé dans le dossier assets -->
-  <img src="assets/Réserver%20ICI.png" alt="Réserver ici" class="affiche">
-
+  <div class="container">
+    <img src="canva-visuel.png" alt="Affiche du concert" class="visuel" />
+  </div>
 </body>
 </html>
