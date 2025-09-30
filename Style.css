@@ -18,6 +18,26 @@ body {
   border-radius: 8px;
 }
 
+/* Textes visibles */
+.lien-texte {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  z-index: 3;
+}
+
+.youtube-texte {
+  top: 65%;
+}
+
+.billetreduc-texte {
+  top: 75%;
+}
+
+/* Zones cliquables invisibles */
 .zone-lien {
   position: absolute;
   display: block;
@@ -25,7 +45,6 @@ body {
   opacity: 0;
 }
 
-/* Positionnement à ajuster selon ton Canva */
 .youtube-lien {
   top: 65%;
   left: 20%;
